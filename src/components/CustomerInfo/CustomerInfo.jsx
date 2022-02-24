@@ -23,11 +23,11 @@ function CustomerInfo(){
     }
 
     const handleNameChange = (event) => {
-        setCustomerToAdd({
-          ...customerToAdd,
-          name: event.target.value,
-        });
-      }
+      setCustomerToAdd({
+        ...customerToAdd,
+        customer_name: event.target.value,
+      });
+    }
 
       const handleAddressChange = (event) => {
         setCustomerToAdd({
