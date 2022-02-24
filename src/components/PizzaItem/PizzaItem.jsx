@@ -1,35 +1,21 @@
 import { useState } from 'react';
 
-function pizzaItem({pizza}) {
-
+function pizzaItem({ pizza }) {
   return (
     <>
-      <div key={pizza.id} className="pizza-container">
-        {toggled ? (
-          <div className="pizza">
-            
-            <img src={pizza.path} />
-          </div>
-        ) : (
-          <>
-            <div className="text-pic" onClick={() => toggleImage()}>
-              {/* <img className = 'together' onClick={() => toggleImage()} src={pizza.path} alt="background"/> */}
-              <h4 className='description '>{pizza.description}</h4>
-            </div>
-          </>
-        )}
-          <>
-            <div>
-              <button className = "like-button" onClick={handleLikeClick}>Like</button>
-              <p>Likes: {pizza.likes}</p>
-            </div>
-          </>
+      <div className="pizza-container">
+        
+        <div className="img"></div>
+
+        <div className="pizza-details-container">
+          <div className="pizza-title"></div>
+          <div className="pizza-description"></div>
+          <div className="pizza-price"></div>
         </div>
+
+        <div className="button-container">
+          <button>Add</button></div>
+      </div>
     </>
   );
-
-
-  return(
-
-  )
 }
