@@ -4,11 +4,15 @@ import './PizzaItem.css';
 function PizzaItem({ pizza }) {
   
   const [isNotAdded, setIsNotAdded] = useState(true);
+  const [pizzaObject, setPizzaObject] = useState({name: '', price:''})
   
   const handleAdd =()=>{
     console.log('in handleAdd');
 
     setIsNotAdded(!isNotAdded);
+    
+    setPizzaObject({name: pizza.name , price: pizza.price})
+
   }
 
   console.log(isNotAdded);
