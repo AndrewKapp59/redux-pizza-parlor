@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import {useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 
 function CustomerInfo(){
     const dispatch = useDispatch();
-
+    const history = useHistory();
     /// todo notes
     // figure out state value 
     let [customerToAdd, setCustomerToAdd] = useState({ customer_name: '', street_address: '', city: '', zip: '', type: ''})
@@ -13,6 +14,7 @@ function CustomerInfo(){
         event.preventDefault();
         console.log('Submitted customer Address');
 
+
         dispatch({type: 'ADD_NEW_CUSTOMER', payload: { 
              customer_name: customerToAdd.customer_name,
              street_address: customerToAdd.street_address, 
@@ -20,6 +22,7 @@ function CustomerInfo(){
              zip: customerToAdd.zip, 
              type: customerToAdd.type,
               }});
+        history.push("/checkout");
     }
 
     const handleNameChange = (event) => {
