@@ -4,6 +4,21 @@ import './App.css';
 
 function App() {
 
+  const fetchPizzaList = () => {
+    axios.get('/api/pizza')
+    .then(response => {
+      dispatch({
+        type: 'SET_PIZZA_LIST',
+        payload: response.data
+      });
+
+    }).catch(error => {
+      console.log('Error fetchBookList', error);
+      alert('NO PIZZA FOR YOU')
+    })
+  }
+
+
   return (
     <div className='App'>
       <header className='App-header'>
