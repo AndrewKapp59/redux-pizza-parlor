@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
+import PizzaList from '../PizzaList/PizzaList';
 
 function App() {
 
@@ -34,6 +35,8 @@ function App() {
   
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
+
+      <PizzaList/>
   
     </div>
   );
