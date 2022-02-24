@@ -3,13 +3,19 @@ import {useDispatch} from 'react-redux';
 
 
 function CustomerInfo(){
+    const dispatch = useDispatch();
+
+    /// todo notes
+    // figure out state value 
+
+    const addCustomer= (event) => {
+        event.preventDefault();
+        console.log('Submitted customer Address');
+
+        dispatch({type: 'ADD_NEW_CUSTOMER', payload: { customer_name: '', street_address: '', city: '', zip: '', type: '', total: '', time: '' }});
 
 
-
-
-
-
-    
+    }
 
     return (
         <form onSubmit={(event) => addCustomer(event)}>
@@ -24,7 +30,7 @@ function CustomerInfo(){
             value={}
             onChange={}
             type='text'
-            placeholder='Street Address'
+            placeholder='Address'
           />
 
         <input
@@ -41,7 +47,7 @@ function CustomerInfo(){
             placeholder='Zip'
         />
         
-        <select name="" id="">
+        <select type='text'  onChange={} value={} >
              <option value="Delivery">Delivery</option>
              <option value="Pick-Up">Pick-Up</option>
         </select>
