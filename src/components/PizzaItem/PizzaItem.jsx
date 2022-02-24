@@ -2,6 +2,17 @@ import { useState } from 'react';
 import './PizzaItem.css';
 
 function PizzaItem({ pizza }) {
+  
+  const [isNotAdded, setIsNotAdded] = useState(true);
+  
+  const handleAdd =()=>{
+    console.log('in handleAdd');
+
+    setIsNotAdded(!isNotAdded);
+  }
+
+  console.log(isNotAdded);
+
   return (
     <>
       <div className="pizza-container">
@@ -15,7 +26,7 @@ function PizzaItem({ pizza }) {
         </div>
 
         <div className="button-container">
-          <button>Add</button>
+         {isNotAdded ? <button onClick={handleAdd}>Add</button> : <button onClick={handleAdd}>Remove</button>}
         </div>
       </div>
     </>
