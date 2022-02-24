@@ -1,8 +1,10 @@
 import React from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
+
+import PizzaItem from '../PizzaItem/PizzaItem';
 
 
-function PizzaList({ product }) {
+function PizzaList() {
 
   const pizzaList = useSelector(store => store.pizzaList);
 
@@ -12,6 +14,7 @@ function PizzaList({ product }) {
     <div className="">
     {pizzaList.map((pizza) => (
       <PizzaItem
+      key={pizza.id}
       pizza = {pizza}
       />
     ))}
