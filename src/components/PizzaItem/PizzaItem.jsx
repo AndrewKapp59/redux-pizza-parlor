@@ -1,18 +1,21 @@
 import { useState } from 'react';
 
-function pizzaItem({pizza}) {
+function pizzaItem({ pizza }) {
+  return (
+    <>
+      <div className="pizza-container">
+        
+        <div className="img"></div>
 
-  const [toggled, setToggled] = useState(true);
+        <div className="pizza-details-container">
+          <div className="pizza-title"></div>
+          <div className="pizza-description"></div>
+          <div className="pizza-price"></div>
+        </div>
 
-
-  // toggles the pic and description
-  const toggleButton = () => setToggled(!toggled);
-
-
-
-  return(
-     <div className='pizza-container'>
-
-     </div>
-  )
+        <div className="button-container">
+          <button>Add</button></div>
+      </div>
+    </>
+  );
 }
