@@ -1,41 +1,25 @@
 import { useState } from 'react';
+import './PizzaItem.css';
 
-function pizzaItem({pizza}) {
-
-  const [toggled, setToggled] = useState(true);
-
-
-  // toggles the pic and description
-  const toggleButton = () => setToggled(!toggled);
-
+function PizzaItem({ pizza }) {
   return (
     <>
-      <div key={pizza.id} className="pizza-container">
-        {toggled ? (
-          <div className="pizza">
-            
-            <img src={pizza.path} />
-          </div>
-        ) : (
-          <>
-            <div className="text-pic" onClick={() => toggleImage()}>
-              {/* <img className = 'together' onClick={() => toggleImage()} src={pizza.path} alt="background"/> */}
-              <h4 className='description '>{pizza.description}</h4>
-            </div>
-          </>
-        )}
-          <>
-            <div>
-              <button className = "like-button" onClick={handleLikeClick}>Like</button>
-              <p>Likes: {pizza.likes}</p>
-            </div>
-          </>
+      <div className="pizza-container">
+
+        <img src={pizza.image_path}/>
+
+        <div className="pizza-details-container">
+          <div className="pizza-title"><h1>{pizza.name}</h1></div>
+          <div className="pizza-description"><p>{pizza.description}</p></div>
+          <div className="pizza-price"><h3>{pizza.price}</h3></div>
         </div>
+
+        <div className="button-container">
+          <button>Add</button>
+        </div>
+      </div>
     </>
   );
-
-
-  return(
-
-  )
 }
+
+export default PizzaItem;

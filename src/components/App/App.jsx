@@ -1,8 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+import PizzaList from '../PizzaList/PizzaList';
 
 function App() {
+
+  const dispatch = useDispatch();
 
   const fetchPizzaList = () => {
     axios.get('/api/pizza')
@@ -18,6 +23,9 @@ function App() {
     })
   }
 
+  useEffect(() => {
+    fetchPizzaList();
+  }, [])
 
   return (
     <div className='App'>
@@ -27,6 +35,8 @@ function App() {
   
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
+
+      <PizzaList/>
   
     </div>
   );
