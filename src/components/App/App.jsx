@@ -6,6 +6,7 @@ import {useDispatch} from 'react-redux';
 import PizzaList from '../PizzaList/PizzaList';
 import CustomerInfo from '../CustomerInfo/CustomerInfo'
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import Checkout from '../Checkout/Checkout';
 
 function App() {
 
@@ -63,7 +64,7 @@ function App() {
         </Route>
 
         <Route path="/checkout">
-
+            <Checkout />
         </Route>
 
         <Route path="admin">
