@@ -2,12 +2,6 @@ import { useState } from 'react';
 
 function pizzaItem({pizza}) {
 
-  const [toggled, setToggled] = useState(true);
-
-
-  // toggles the pic and description
-  const toggleButton = () => setToggled(!toggled);
-
   return (
     <>
       <div key={pizza.id} className="pizza-container">

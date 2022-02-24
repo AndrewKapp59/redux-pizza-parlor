@@ -1,8 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 
 function App() {
+
+  const dispatch = useDispatch();
 
   const fetchPizzaList = () => {
     axios.get('/api/pizza')
@@ -18,6 +22,9 @@ function App() {
     })
   }
 
+  useEffect(() => {
+    fetchPizzaList();
+  }, [])
 
   return (
     <div className='App'>
