@@ -10,11 +10,7 @@ function PizzaList({ product }) {
     <div className="">
     {pizzaList.map((pizza) => (
       <PizzaItem
-      key = {pizza.id}
-      name = {pizza.name}
-      description = {pizza.description}
-      price = {pizza.price}
-      image ={pizza.image_path}
+      pizza = {pizza}
       />
     ))}
   </div>
