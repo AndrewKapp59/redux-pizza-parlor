@@ -1,11 +1,12 @@
 import { useState } from 'react';
+import './PizzaItem.css';
 
 function PizzaItem({ pizza }) {
   return (
     <>
       <div className="pizza-container">
 
-        <div className="img"><img src={pizza.image_path}/></div>
+        <img src={pizza.image_path}/>
 
         <div className="pizza-details-container">
           <div className="pizza-title"><h1>{pizza.name}</h1></div>
