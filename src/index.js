@@ -5,6 +5,7 @@ import App from './components/App/App';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
+import rootReducer from './reducers/_root.reducer';
 
 
 
@@ -26,10 +27,7 @@ const customerList  = (state = [], action) => {
 }
 
 const storeInstance = createStore(
-  combineReducers({
-      pizzaList,
-      customerList
-  }), 
+  rootReducer, 
   applyMiddleware(
       logger // tell redux that we want to use our new logger 
     )   
