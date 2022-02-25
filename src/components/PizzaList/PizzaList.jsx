@@ -10,6 +10,7 @@ import { useHistory } from 'react-router-dom';
 
 function PizzaList() {
   const pizzaList = useSelector((store) => store.pizzaList);
+  const pizzaOrder = useSelector((store) => store.pizzaOrder);
 
   const history = useHistory();
 
@@ -18,6 +19,8 @@ function PizzaList() {
   }
 
   console.log('pizzaList', pizzaList);
+
+  console.log('pizzaOrder', pizzaOrder);
 
   return (
     <>
